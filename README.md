@@ -34,8 +34,8 @@ Please provide instructions on how to build, run, and execute integration tests 
 
 ## Execution Instructions
 
-> **Note:** Please provide instructions here
-> **Note:** I was having issue with gradle-java while running on local that's why followed the maven-java way for coding.
+> **Note:** Please provide instructions here \
+> I was having issue with gradle-java while running on local that's why followed the maven-java way for coding.
 1. for wiremock please do following (I did that as this was not working https://hub.docker.com/r/rodolpheche/wiremock/):
 	a. downloaded the wiremock-standalone-3.3.1.jar from http://wiremock.org/
 	b. run the jar with command
@@ -75,10 +75,10 @@ Please provide instructions on how to build, run, and execute integration tests 
 		curl --location 'http://localhost:9911/wiremocked/json?lat=43.66258321585993&lng=-79.39152689466948'
 
 2. please extract the zip file attached with email		
-3. now change diractory to codeassessmentexercise
+3. now change directory to codeassessmentexercise
 4. I am assuming docker is installed then run following commands:
-	a. docker build --build-arg JAR_FILE=/target/codeassessmentexercise-0.0.1-SNAPSHOT.jar -t myorg/myapp .
-	b. docker run -p 8080:8080 myorg/myapp
+	a. docker build --build-arg JAR_FILE=/target/codeassessmentexercise-0.0.1-SNAPSHOT.jar -t codeassessment/myapp .
+	b. docker run -p 8080:8080 codeassessment/myapp
 	c. after successful run please check with following curl
 		curl --location 'http://localhost:8080/night-time-temperature?lat=43.66258321585993&lng=-79.39152689466948&tzId=Asia%2FBahrain'
 	
