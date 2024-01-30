@@ -37,11 +37,11 @@ Please provide instructions on how to build, run, and execute integration tests 
 > **Note:** Please provide instructions here \
 > I was having issue with gradle-java while running on local that's why followed the maven-java way for coding.
 1. for wiremock please do following (I did that as this was not working https://hub.docker.com/r/rodolpheche/wiremock/):
-	a. downloaded the wiremock-standalone-3.3.1.jar from http://wiremock.org/
-	b. run the jar with command
-		java -jar wiremock-standalone-3.3.1.jar --port 9911
-	c. create mock/stub url with following curl:
-		curl --location 'http://localhost:9911/__admin/mappings' \
+- 	download the wiremock-standalone-3.3.1.jar from http://wiremock.org/
+-	run the jar with command
+-		java -jar wiremock-standalone-3.3.1.jar --port 9911
+-	create mock/stub url with following curl:
+-		curl --location 'http://localhost:9911/__admin/mappings' \
 			--header 'Content-Type: application/json' \
 			--data '{
 				"request": {
@@ -71,14 +71,14 @@ Please provide instructions on how to build, run, and execute integration tests 
 					}
 				}
 			}'
-	d. check if everything stub is working or not with following curl
-		curl --location 'http://localhost:9911/wiremocked/json?lat=43.66258321585993&lng=-79.39152689466948'
+-	check if everything stub is working or not with following curl
+-		curl --location 'http://localhost:9911/wiremocked/json?lat=43.66258321585993&lng=-79.39152689466948'
 
 2. please extract the zip file attached with email		
 3. now change directory to codeassessmentexercise
 4. I am assuming docker is installed then run following commands:
-	a. docker build --build-arg JAR_FILE=/target/codeassessmentexercise-0.0.1-SNAPSHOT.jar -t codeassessment/myapp .
-	b. docker run -p 8080:8080 codeassessment/myapp
-	c. after successful run please check with following curl
-		curl --location 'http://localhost:8080/night-time-temperature?lat=43.66258321585993&lng=-79.39152689466948&tzId=Asia%2FBahrain'
+-	docker build --build-arg JAR_FILE=/target/codeassessmentexercise-0.0.1-SNAPSHOT.jar -t codeassessment/myapp .
+-	docker run -p 8080:8080 codeassessment/myapp
+-	after successful run please check with following curl
+-		curl --location 'http://localhost:8080/night-time-temperature?lat=43.66258321585993&lng=-79.39152689466948&tzId=Asia%2FBahrain'
 	
